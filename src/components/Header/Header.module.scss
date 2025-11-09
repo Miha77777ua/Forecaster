@@ -1,0 +1,38 @@
+@import "../../scss/abstracts/variables.scss";
+
+.header {
+  font-family: "Montserrat Alternates";
+  font-size: 12px;
+  padding: 12px 0;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 45px;
+  }
+
+  &__link {
+    color: inherit;
+  }
+}
+
+.user {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.signup {
+  width: 90px;
+  height: 35px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: $contrast-bg;
+}
