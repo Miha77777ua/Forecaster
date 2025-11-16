@@ -1,0 +1,113 @@
+@import "../../scss/abstracts/variables.scss";
+
+.backdrop {
+  &.hidden {
+    opacity: 0;
+    pointer-events: none;
+
+    & > .modal {
+      transform: translate(-50%, -500px);
+    }
+  }
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 80px;
+  background-color: white;
+  border-radius: 25px;
+  width: 600px;
+  box-sizing: border-box;
+  transition: transform 0.2s;
+
+  &__title {
+    font-family: "Montserrat Alternates";
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 15px;
+  }
+
+  &__label {
+    margin: 0;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 17px 20px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background-color: $content-bg;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+
+  &__submit {
+    width: 114px;
+    margin: 0 auto;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    border-radius: 10px;
+    background-color: $contrast-bg;
+    padding: 12px 30px;
+  }
+
+  &__bottom {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.form {
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.bottom {
+  &__action {
+    background-color: transparent;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-decoration: underline;
+  }
+}
+
