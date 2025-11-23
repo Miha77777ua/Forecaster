@@ -3,7 +3,7 @@ import Logo from "../../images/logo.svg";
 import User from "../../images/user.svg";
 import style from "./Header.module.scss";
 
-export const Header = ({ toggleModal }) => {
+export const Header = ({ toggleModal, username, toggleProfile }) => {
   return (
     <header className={style.header}>
       <Container>
@@ -17,7 +17,9 @@ export const Header = ({ toggleModal }) => {
             </ul>
           </nav>
           <div className={style.user}>
-            <button className={style.signup} onClick={toggleModal} id="open">Sign Up</button>
+            {username === "" &&
+              <button className={style.signup} onClick={toggleModal} id="open">Sign Up</button> ||
+              <button className={style.username} onClick={toggleProfile} id="profile">{username}</button>}
             <img src={User} className={style.user__logo} />
           </div>
         </div>
