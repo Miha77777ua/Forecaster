@@ -50,13 +50,16 @@
   }
 
   &__logout {
-    padding: 5px 7px;
-    background-color: $contrast-bg;
-    border-radius: 10px;
-    width: 200px;
-    font-family: inherit;
-    font-size: 20px;
+    width: 120px;
     margin: 0 auto;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    border-radius: 10px;
+    background-color: $contrast-bg;
+    padding: 12px 30px;
   }
 }
 

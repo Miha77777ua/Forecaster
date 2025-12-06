@@ -1,0 +1,16 @@
+.swiper {
+  &-slide {
+    border-radius: 10px;
+
+    & > img {
+      border-radius: 10px;  
+    }
+  }
+
+  &-button-prev, &-button-next {
+    color: white;
+  }
+
+  margin-bottom: 50px;
+}
+

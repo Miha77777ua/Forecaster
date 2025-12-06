@@ -1,0 +1,53 @@
+@import "../../scss/abstracts/variables.scss";
+
+.news {
+  margin-bottom: 80px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 40px;
+  }
+
+  &__more {
+    width: 138px;
+    height: 40px;
+    background-color: $contrast-bg;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    font-family: inherit;
+  }
+
+  &__list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    flex-basis: calc((100% - 60px) / 4);
+  }
+
+  &__img {
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+
+  &__desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: black;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}

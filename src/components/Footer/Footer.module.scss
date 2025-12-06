@@ -1,0 +1,38 @@
+@import "../../scss/abstracts/variables.scss";
+
+.footer {
+  display: flex;
+  padding-left: 150px;
+  padding-top: 40px;
+  box-sizing: border-box;
+  gap: 100px;
+  align-items: flex-start;
+  font-family: "Montserrat Alternates";
+  background-color: $contrast-bg;
+  padding-bottom: 77px;
+}
+
+.address {
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 10px;
+  }
+}
+
+.contacts {
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+}

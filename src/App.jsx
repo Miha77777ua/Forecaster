@@ -4,6 +4,10 @@ import { Header } from "./components/Header/Header";
 import { Modal } from "./components/Modal/Modal";
 import { Hero } from "./components/Hero/Hero.jsx";
 import { Profile } from "./components/Profile/Profile.jsx";
+import { Footer } from "./components/Footer/Footer.jsx";
+import { Slider } from "./components/Slider/Slider.jsx";
+import { Cards } from "./components/Cards/Cards.jsx";
+import { News } from "./components/News/News.jsx";
 import api from "./api/user.js";
 
 const App = () => {
@@ -89,6 +93,10 @@ const App = () => {
       <Modal isModalOpen={isModalOpen} toggleModal={toggleModal} register={register} login={login} />
       <Profile isProfileOpen={isProfileOpen} toggleProfile={toggleProfile} logout={logout} username={username} email={email} />
       <Hero submit={handleSearchForm} />
+      <Cards />
+      <News />
+      <Slider />
+      <Footer />
     </>
   )
 }

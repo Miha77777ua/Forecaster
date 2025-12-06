@@ -1,6 +1,7 @@
 import data from "../../data/date.js";
 import style from "./Hero.module.scss";
 import Search from "../../images/search.svg";
+import { Container } from "../Container/Container.jsx";
 
 export const Hero = ({ submit }) => {
   const getCurrentMonth = () => {
@@ -17,20 +18,22 @@ export const Hero = ({ submit }) => {
   }
 
   return (
-    <div className={style.hero}>
-      <h1 className={style.hero__title}>Weather dashboard</h1>
-      <div className={style.hero__central}>
-        <p className={style.hero__text}>Create your personal list of favorite cities and always be aware of the weather.</p>
-        <div className={style.hero__date}>
-          <p className={style.date__text}>{getCurrentMonth()}</p>
-          <p className={style.date__text}>{getCurrentDay()}</p>
+    <section className={style.hero}>
+      <Container>
+        <h1 className={style.hero__title}>Weather dashboard</h1>
+        <div className={style.hero__central}>
+          <p className={style.hero__text}>Create your personal list of favorite cities and always be aware of the weather.</p>
+          <div className={style.hero__date}>
+            <p className={style.date__text}>{getCurrentMonth()}</p>
+            <p className={style.date__text}>{getCurrentDay()}</p>
+          </div>
         </div>
-      </div>
-      <form className={style.hero__form} onSubmit={submit}>
-        <input name="search" type="text" className={style.hero__search} placeholder="Search location..." required />
-        <button type="submit" className={style.hero__submit}><img src={Search} className={style.hero__icon} /></button>
-      </form>
-    </div>
+        <form className={style.hero__form} onSubmit={submit}>
+          <input name="search" type="text" className={style.hero__search} placeholder="Search location..." required />
+          <button type="submit" className={style.hero__submit}><img src={Search} className={style.hero__icon} /></button>
+        </form>
+      </Container>
+    </section>
   )
 }
 
