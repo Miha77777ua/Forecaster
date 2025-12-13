@@ -13,8 +13,6 @@ export const Weekly = ({ city, isActive }) => {
     if (Object.keys(city).length > 0) {
       const data = await api.weekly(city.name);
 
-      console.log(data);
-
       setData(data);
     }
   }

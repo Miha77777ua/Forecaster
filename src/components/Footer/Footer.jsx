@@ -6,7 +6,7 @@ import style from "./Footer.module.scss";
 
 export const Footer = () => {
   return (
-    <footer className={style.footer}>
+    <footer className={style.footer} id="footer">
       <div className={style.footer__top}>
         <img src={Logo} alt="logo" className={style.footer__logo} />
         <address className={style.footer__addres}>

@@ -2,9 +2,13 @@
 
 .hero {
   padding: 100px 0;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/hero-bg.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/hero-bg-mob.jpg");
   background-size: cover;
   margin-bottom: 60px;
+
+  @media screen and (min-width: 768px) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/hero-bg.jpg");
+  }
 
   &__title {
     font-weight: 600;

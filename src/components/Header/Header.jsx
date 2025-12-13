@@ -24,9 +24,9 @@ export const Header = ({ toggleModal, username, toggleProfile }) => {
           <img src={width >= 768 ? Logo : LogoMob} className={style.header__logo} />
           <nav className={style.nav}>
             <ul className={style.nav__list}>
-              <li className={style.nav__item}><a href="." className={style.nav__link}>Who we are</a></li>
-              <li className={style.nav__item}><a href="." className={style.nav__link}>Contacts</a></li>
-              <li className={style.nav__item}><a href="." className={style.nav__link}>Menu</a></li>
+              <li className={style.nav__item}><a href="#hero" className={style.nav__link}>Who we are</a></li>
+              <li className={style.nav__item}><a href="#footer" className={style.nav__link}>Contacts</a></li>
+              <li className={style.nav__item}><a href="#cards" className={style.nav__link}>Menu</a></li>
             </ul>
           </nav>
           <div className={style.user}>

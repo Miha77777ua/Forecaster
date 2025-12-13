@@ -139,9 +139,6 @@ const App = () => {
 
     localCities[id].liked = !localCities[id].liked;
 
-    console.log(id);
-    console.log(localCities[id].liked);
-
     localStorage.setItem("cities", JSON.stringify(localCities));
 
     setCities(localCities);

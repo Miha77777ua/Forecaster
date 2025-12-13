@@ -18,7 +18,7 @@ export const Hero = ({ submit }) => {
   }
 
   return (
-    <section className={style.hero}>
+    <section className={style.hero} id="hero">
       <Container>
         <h1 className={style.hero__title}>Weather dashboard</h1>
         <div className={style.hero__central}>

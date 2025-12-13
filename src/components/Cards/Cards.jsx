@@ -50,7 +50,7 @@ export const Cards = ({ cities, update, remove, favorite, isLogged }) => {
   }
 
   return (
-    <section className={(cities[0] && style.cards) || `${style.cards} ${style.none}`}>
+    <section className={(cities[0] && style.cards) || `${style.cards} ${style.none}`} id="cards">
       <Container>
         {(cities[0] &&
           <ul className={style.cards__list}>
