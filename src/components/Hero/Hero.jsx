@@ -14,7 +14,7 @@ export const Hero = ({ submit }) => {
     const date = new Date();
     const day = date.getDate().toString();
 
-    return `${data.days[date.getDay()]}, ${day}${day[day.length - 1] === "1" ? "st" : day[day.length - 1] === "2" ? "nd" : day[day.length - 1] === "3" ? "rd" : "th"}`;
+    return `${data.days[date.getDay()]}, ${day}${day[0] === "1" && day.length > 1 ? "th" : day[day.length - 1] === "1" ? "st" : day[day.length - 1] === "2" ? "nd" : day[day.length - 1] === "3" ? "rd" : "th"}`;
   }
 
   return (
@@ -32,6 +32,7 @@ export const Hero = ({ submit }) => {
           <input name="search" type="text" className={style.hero__search} placeholder="Search location..." required />
           <button type="submit" className={style.hero__submit}><img src={Search} className={style.hero__icon} /></button>
         </form>
+
       </Container>
     </section>
   )

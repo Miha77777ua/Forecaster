@@ -17,6 +17,7 @@
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.2s;
+  z-index: 10;
 }
 
 .modal {
@@ -24,21 +25,30 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 30px 80px;
+  padding: 30px 40px;
   background-color: white;
   border-radius: 25px;
-  width: 600px;
+  width: 300px;
   box-sizing: border-box;
   transition: transform 0.2s;
+  
+  @media screen and (min-width: 768px) {
+    padding: 30px 80px;
+    width: 600px;
+  }
 
   &__title {
     font-family: "Montserrat Alternates";
     font-weight: 500;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
     margin-bottom: 40px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 28px;
+    }
   }
 
   &__form {

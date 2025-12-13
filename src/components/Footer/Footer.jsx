@@ -7,21 +7,23 @@ import style from "./Footer.module.scss";
 export const Footer = () => {
   return (
     <footer className={style.footer}>
-      <img src={Logo} alt="logo" className={style.footer__logo} />
-      <address className={style.footer__addres}>
-        <p className={style.address__title}>Address</p>
-        <ul className={style.adress__list}>
-          <li className={style.adress__item}>
-            <p className={style.address__street}>Svobody str.35</p>
-          </li>
-          <li className={style.adress__item}>
-            <p className={style.address__city}>Kyiv</p>
-          </li>
-          <li className={style.adress__item}>
-            <p className={style.address__country}>Ukraine</p>
-          </li>
-        </ul>
-      </address>
+      <div className={style.footer__top}>
+        <img src={Logo} alt="logo" className={style.footer__logo} />
+        <address className={style.footer__addres}>
+          <p className={style.address__title}>Address</p>
+          <ul className={style.adress__list}>
+            <li className={style.adress__item}>
+              <p className={style.address__street}>Svobody str.35</p>
+            </li>
+            <li className={style.adress__item}>
+              <p className={style.address__city}>Kyiv</p>
+            </li>
+            <li className={style.adress__item}>
+              <p className={style.address__country}>Ukraine</p>
+            </li>
+          </ul>
+        </address>
+      </div>
       <div className={style.footer__contacts}>
         <p className={style.contacts__title}>Contact us</p>
         <ul className={style.contacts__list}>

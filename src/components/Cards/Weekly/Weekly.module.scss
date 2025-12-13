@@ -1,0 +1,51 @@
+.weekly {
+  background-color: #E8E8E8;
+  border-radius: 20px;
+  border-radius: 20px;
+  padding: 40px 77px;
+  margin-top: 50px;
+
+  &__list {
+    display: flex;
+    gap: 40px 58px;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    flex-basis: calc((100% - 116px) / 1);
+    display: flex;
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: 217px;
+
+    @media screen and (min-width: 768px) {
+      flex-basis: calc((100% - 116px) / 3);
+    }
+  }
+
+  &__desc {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+
+  &__info {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+  }
+}

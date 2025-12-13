@@ -1,8 +1,9 @@
 @import "../../scss/abstracts/variables.scss";
 
 .footer {
-  display: flex;
-  padding-left: 150px;
+  display: block;
+  padding-left: 30px;
+  padding-right: 20px;
   padding-top: 40px;
   box-sizing: border-box;
   gap: 100px;
@@ -10,6 +11,34 @@
   font-family: "Montserrat Alternates";
   background-color: $contrast-bg;
   padding-bottom: 77px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    padding-left: 100px;
+    padding-right: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding-left: 150px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (min-width: 768px) {
+      justify-content: flex-start;
+      gap: 100px;
+    }
+  }
+
+  &__contacts {
+    margin-top: 50px;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 0;
+    }
+  }
 }
 
 .address {
@@ -29,10 +58,16 @@
     line-height: 100%;
     letter-spacing: 0%;
     margin-bottom: 10px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      text-align-last: left;
+    }
   }
 
   &__list {
     display: flex;
     gap: 20px;
+    justify-content: center;
   }
 }

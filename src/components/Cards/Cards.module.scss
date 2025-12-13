@@ -2,21 +2,49 @@
 
 .cards {
   margin-bottom: 80px;
+  position: relative;
+
+  &.none {
+    padding: 50px 0;
+  }
+
+  &__error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+  }
 
   &__list {
     display: flex;
-    gap: 90px;
+    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media screen and (min-width: 1200px) {
+      gap: 90px;
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-basis: calc((100% - 180px) / 3);
+    flex-basis: calc((100% - 120px) / 1);
     background-color: $cards-bg;
     border-radius: 20px;
     padding: 15px 30px;
+    box-sizing: border-box;
     gap: 20px;
+
+    @media screen and (min-width: 768px) {
+      flex-basis: calc((100% - 120px) / 2);
+    }
+
+    @media screen and (min-width: 1200px) {
+      flex-basis: calc((100% - 180px) / 3);
+    }
   }
 
   &__top {
@@ -88,7 +116,11 @@
 
   &__actions {
     display: flex;
-    gap: 16px;
+    gap: 5px;
+
+    @media screen and (min-width: 768px) {
+      gap: 16px;
+    }
   }
 
   &__remove, &__like, &__reload {

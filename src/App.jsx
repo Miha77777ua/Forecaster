@@ -9,6 +9,7 @@ import { Slider } from "./components/Slider/Slider.jsx";
 import { Cards } from "./components/Cards/Cards.jsx";
 import { News } from "./components/News/News.jsx";
 import api from "./api/user.js";
+import wezApi from "./api/weather.js";
 
 const App = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -16,6 +17,7 @@ const App = () => {
   const [isLogged, setLogged] = useState(JSON.parse(localStorage.getItem("logged")) || false);
   const [username, setUsername] = useState(localStorage.getItem("username") || "");
   const [email, setEmail] = useState(localStorage.getItem("email") || "");
+  const [cities, setCities] = useState(JSON.parse(localStorage.getItem("cities")) || []);
 
   const toggleModal = (ev) => {
     if (["open", "backdrop"].includes(ev.target.id)) {
@@ -33,8 +35,6 @@ const App = () => {
     ev.preventDefault();
 
     const data = await api.register(ev.target.elements.user.value, ev.target.elements.email.value, ev.target.elements.password.value);
-
-    console.log(data);
 
     if (data == "Success") {
       toast.success(data);
@@ -80,10 +80,71 @@ const App = () => {
     }, 500);
   }
 
-  const handleSearchForm = (ev) => {
+  const handleSearchForm = async (ev) => {
     ev.preventDefault();
 
-    console.log("Submitted");
+    let data = await wezApi.weather(ev.target.elements.search.value);
+
+    if (data.cod !== "404") {
+      const date = new Date();
+
+      const format = (num) => num < 10 ? "0" + num : num;
+
+      const hours = format(date.getHours());
+      const minutes = format(date.getMinutes());
+
+      data = {
+        ...data, liked: false, time: { hours: `${hours}:${minutes}`, date: date.toLocaleDateString(), day: date.getDay() },
+      };
+
+      localStorage.setItem("cities", JSON.stringify([...cities, data]));
+
+      setCities([...cities, data]);
+    }
+  }
+
+  const updateCard = async (id, city) => {
+    let localCities = [...cities];
+
+    localCities[id] = await wezApi.weather(city);
+
+    const date = new Date();
+
+    const format = (num) => num < 10 ? "0" + num : num;
+
+    const hours = format(date.getHours());
+    const minutes = format(date.getMinutes());
+
+    localCities[id] = {
+      ...localCities[id], liked: cities[id].liked, time: { hours: `${hours}:${minutes}`, date: date.toLocaleDateString(), day: date.getDay() },
+    };
+
+    localStorage.setItem("cities", JSON.stringify(localCities));
+
+    setCities(localCities);
+  }
+
+  const removeCard = (id) => {
+    let localCities = [...cities];
+
+    localCities.splice(id, 1);
+
+    localStorage.setItem("cities", JSON.stringify(localCities));
+
+    setCities(localCities);
+  }
+
+  const favoriteCard = (id) => {
+    let localCities = [...cities];
+
+    localCities[id].liked = !localCities[id].liked;
+
+    console.log(id);
+    console.log(localCities[id].liked);
+
+    localStorage.setItem("cities", JSON.stringify(localCities));
+
+    setCities(localCities);
   }
 
   return (
@@ -93,7 +154,7 @@ const App = () => {
       <Modal isModalOpen={isModalOpen} toggleModal={toggleModal} register={register} login={login} />
       <Profile isProfileOpen={isProfileOpen} toggleProfile={toggleProfile} logout={logout} username={username} email={email} />
       <Hero submit={handleSearchForm} />
-      <Cards />
+      <Cards cities={cities} update={updateCard} remove={removeCard} favorite={favoriteCard} isLogged={isLogged} />
       <News />
       <Slider />
       <Footer />
@@ -101,4 +162,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
