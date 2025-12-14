@@ -28,13 +28,19 @@ export const Footer = () => {
         <p className={style.contacts__title}>Contact us</p>
         <ul className={style.contacts__list}>
           <li className={style.contacts__item}>
-            <img src={Instagram} alt="instagram" className={style.contacts__icon} />
+            <a href="https://www.instagram.com/" className="contacts__link" target="_blank">
+              <img src={Instagram} alt="instagram" className={style.contacts__icon} />
+            </a>
           </li>
           <li className={style.contacts__item}>
-            <img src={Facebook} alt="facebook" className={style.contacts__icon} />
+            <a href="https://www.facebook.com/" className="contacts__link" target="_blank">
+              <img src={Facebook} alt="facebook" className={style.contacts__icon} />
+            </a>
           </li>
           <li className={style.contacts__item}>
-            <img src={Whatsapp} alt="whatsapp" className={style.contacts__icon} />
+            <a href="https://www.whatsapp.com/" className="contacts__link" target="_blank">
+              <img src={Whatsapp} alt="whatsapp" className={style.contacts__icon} />
+            </a>
           </li>
         </ul>
       </div>

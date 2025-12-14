@@ -62,7 +62,7 @@ export const Cards = ({ cities, update, remove, favorite, isLogged }) => {
                 </div>
                 <p className={style.cards__hour}>{el.time.hours}</p>
                 <button className={style.cards__hourly} onClick={enableDailyForecast}>Hourly forecast</button>
-                {isLogged && <button className={style.cards__hourly} onClick={enableWeeklyForecast}>Weekly forecast</button>}
+                {isLogged && <button className={style.cards__hourly} onClick={enableWeeklyForecast}>3-day forecast</button>}
                 <div className={style.cards__time}>
                   <p className={style.cards__date}>{el.time.date}</p>
                   <p className={style.cards__day}>{data.days[el.time.day]}</p>
